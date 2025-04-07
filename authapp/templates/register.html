@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Nuevo usuario</title>
 </head>
 <body>
-    <h2>Registro</h2>
     <form method="POST">
+        <h2>Registrar nuevo usuario</h2>
         {% csrf_token %}
         <label for="email">Email:</label>
         <input type="email" name="email" required>
@@ -22,6 +24,7 @@
         </select>
         <br>
         <button type="submit">Registrarse</button>
+        <a href="{% url 'login' %}">Iniciar sesión</a>
     </form>
 </body>
 </html>

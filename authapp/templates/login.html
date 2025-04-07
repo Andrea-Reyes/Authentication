@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
     <title>Login</title>
 </head>
-<body>
-    <h2>Iniciar Sesión</h2>
+<body>  
     <form method="POST">
+        <h2>Iniciar sesión</h2>
         {% csrf_token %}
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
-        <br>
+        {{ form.as_p }}
         <button type="submit">Ingresar</button>
+        <a href="{% url 'register' %}">Registrar otro usuario</a>
     </form>
 </body>
 </html>
