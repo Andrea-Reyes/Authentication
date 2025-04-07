@@ -31,10 +31,11 @@ def login_view(request):
                     #return redirect('dashboard')
                     return render(request,'dashboard.html')
                 else:
-                    #messages.error(request, "Datos incorrectos")
-                    return render(request,'error.html')
+                    error = "Datos incorrectos"
+                    return render(request,'error.html', {'error': error})
             except User.DoesNotExist:
-                messages.error(request, "Datos incorrectos")
+                error = "El usuario no existe"
+                return render(request,'error.html', {'error': error})
 
     return render(request, 'login.html', {'form': form})
 

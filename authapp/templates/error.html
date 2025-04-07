@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'error.css' %}">
     <title>Error</title>
 </head>
 <body>
-    <h2>Error</h2>
-    <p>{{ error }}</p>
-    <a href="{% url 'login' %}">Volver al login</a>
+    <div class="container">
+        <h2>Error</h2>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        <a href="{% url 'login' %}">Volver al login</a>    
+    </div>
 </body>
 </html>
