@@ -26,7 +26,7 @@ def login_view(request):
                     request.session['username'] = email
                     
                     #Agregar la durabilidad
-                    request.session.set_expiry[3600]
+                    request.session.set_expiry(3600)
 
                     #return redirect('dashboard')
                     return render(request,'dashboard.html')
