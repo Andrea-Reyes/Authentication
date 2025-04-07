@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+form p {
+    font-size: 14px;
+    color: #888;
+}
+
+form button {
+    background-color: #4c7caf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #4550a0;
+}
+
+form a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, select:focus {
+    border-color: #514caf;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+}
