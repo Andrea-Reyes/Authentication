@@ -8,7 +8,7 @@ class AuthMiddleware:
         #Lista de rutas permitidas sin autenticación
         rutas_permitidas = ['/auth/login/','/auth/register/']
 
-        #Verififcar si el usuario tiene la sesion activa
+        #Verificar si el usuario tiene la sesion activa
         user_id = request.session.get('user_id')
 
         if not user_id and request.path not in rutas_permitidas:
@@ -18,7 +18,7 @@ class AuthMiddleware:
             return redirect('dashboard')
 
         request.user_id = user_id
-        request.usuario = request.sesion.get('username')
-
+        request.usuario = request.session.get('username')
         response = self.get_response(request)
+            
         return response
