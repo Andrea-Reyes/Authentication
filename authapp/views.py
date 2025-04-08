@@ -64,7 +64,9 @@ def register_view(request):
 def dashboard_view(request):
     user_id = request.user_id
     usuario = request.usuario
-    return HttpResponse(f'Bienvenido {usuario}, su ID es {user_id}')
+    return render(request, 'dashboard.html', {'user_id': user_id, 'usuario': usuario})
+
+    #return HttpResponse(f'Bienvenido {usuario}, su ID es {user_id}')
 
     #Lo hicimos en clase
     #if 'user_id' in request.session:
